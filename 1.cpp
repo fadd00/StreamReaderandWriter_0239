@@ -4,8 +4,11 @@
 using namespace std;
 int main(){
     string baris;
+    string FileName;
+    cout << "insert File Name : ";
+    cin >> FileName; 
     ofstream outfile;
-    outfile.open("contoh.txt");
+    outfile.open(FileName + ".txt", ios::out);
     cout << ">=write file, \'q\' exit" << endl;
     while (true){
         cout << "- ";
@@ -15,7 +18,7 @@ int main(){
         outfile << baris << endl;
     }outfile.close();
     ifstream infile;
-    infile.open("contoh.txt");
+    infile.open(FileName + ".txt" , ios::in);
     cout << endl
          << ">= opening and reading the file" << endl;
     if (infile.is_open()){
