@@ -7,7 +7,7 @@ int main(){
     string baris;
 
     ofstream outfile;
-    outfile.open("contoh.txt")
+    outfile.open("contoh.txt");
 
     cout << ">=write file, \'q\' exit" << endl;
 
@@ -18,4 +18,21 @@ while(true){
     outfile << baris << endl;
 }
 outfile.close();
+
+ifstream infile;
+
+infile.open("contoh.txt");
+
+cout << endl << ">= opening and reading the file" << endl;
+
+if (infile.is_open())
+{
+    while (getline(infile, baris))
+    {
+        cout << baris << '\n';
+    }
+    infile.close();
+}
+else cout << "unable to open file";
+return 0;
 }
